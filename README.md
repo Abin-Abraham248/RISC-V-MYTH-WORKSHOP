@@ -3,46 +3,7 @@
 ## Microprocessor for You in Thirty Hours
 
 This repository contains my complete documentation, implementation work, experiments, simulation results, and learning outcomes from the **RISC-V MYTH Workshop** conducted by **VLSI System Design (VSD)** in collaboration with **Redwood EDA**.
-
 The workshop provided hands-on exposure to the **RISC-V Instruction Set Architecture (ISA)**, processor architecture, software-hardware interaction, **TL-Verilog**, and the development of a RISC-V processor using the **Makerchip** platform.
-
----
-
-## 📌 About the Workshop
-
-The **MYTH (Microprocessor for You in Thirty Hours)** workshop is a practical introduction to processor design using the open RISC-V ISA.
-
-The workshop follows a progression from understanding how software executes on a processor to designing the hardware required to execute RISC-V instructions.
-
-The overall learning flow can be summarized as:
-
-```text
-RISC-V ISA
-     │
-     ▼
-RISC-V Software Toolchain
-     │
-     ▼
-C → Assembly → Machine Code
-     │
-     ▼
-Instruction Encoding & ABI
-     │
-     ▼
-TL-Verilog
-     │
-     ▼
-Digital Logic & Processor Datapath
-     │
-     ▼
-RISC-V Core
-     │
-     ▼
-Pipelining
-     │
-     ▼
-Simulation & Verification
-```
 
 ---
 
@@ -64,6 +25,7 @@ The main objectives of this workshop were to:
 
 ---
 
+
 # 📚 Workshop Documentation
 
 The workshop documentation is divided according to the individual workshop days.
@@ -80,45 +42,7 @@ The workshop documentation is divided according to the individual workshop days.
 
 ---
 
-# 🗂️ Repository Structure
 
-```text
-RISC-V-MYTH-Workshop/
-│
-├── README.md
-│
-├── Day-1/
-│   ├── README.md
-│   ├── images/
-│   ├── code/
-│   └── outputs/
-│
-├── Day-2/
-│   ├── README.md
-│   ├── images/
-│   ├── code/
-│   └── outputs/
-│
-├── Day-3/
-│   ├── README.md
-│   ├── images/
-│   ├── code/
-│   └── outputs/
-│
-├── Day-4/
-│   ├── README.md
-│   ├── images/
-│   ├── code/
-│   └── outputs/
-│
-├── Day-5/
-│   ├── README.md
-│   ├── images/
-│   ├── code/
-│   └── outputs/
-│
-└── LICENSE
-```
 
 ---
 
