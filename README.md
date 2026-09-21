@@ -12,7 +12,6 @@ The workshop provided hands-on exposure to the **RISC-V Instruction Set Architec
 The main objectives of this workshop were to:
 
 * Understand the fundamentals of the RISC-V ISA.
-* Learn the RV32I instruction set.
 * Understand how high-level C programs are translated into machine instructions.
 * Explore the RISC-V GNU toolchain.
 * Understand RISC-V registers and the ABI.
@@ -21,7 +20,6 @@ The main objectives of this workshop were to:
 * Implement a RISC-V processor core.
 * Introduce pipelining into the processor.
 * Simulate and analyze processor behavior.
-* Gain practical experience with open-source hardware design tools.
 
 ---
 ## Introduction to RISC-V ISA
