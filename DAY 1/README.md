@@ -15,7 +15,7 @@
     The instructions which work on these numbers are called Base Integer Instruction **RV64I**.
     
 ## Lab 1 : C program of Sum 1 to n  numbers.
-  A basic C program to calculate sum of natural numbers upto a limit provided by the user. The code can be found [here](https://github.com/Abin-Abraham248/RISC-V-MYTH-WORKSHOP/blob/main/DAY%201/Codes/sum1_n.c) 
+  A basic C program to calculate sum of natural numbers upto a limit provided by the user. The code can be found [here](Codes/sum1_9.c) 
   - Command used to compile the C program is `gcc <filename.c>` or `gcc -o <binary file name> <filename.c>`and to run we use `./a.out` or `./<binary file name>`
   - 
 ## Lab 2 : C program of Sum 1 to n  numbers, RISC-V toolchain.
@@ -33,7 +33,7 @@
     ```
     riscv64-unknown-elf-objdump -d sum1_n.o
     ```
-     ![](DAY1/Images/deassemble.png)
+     ![](Images/deassemble.png)
     
   - To run we use spike which is a RISC-V simulator, following is the command
     ```
@@ -45,11 +45,11 @@
     ```
   
   **Output on console**
-  ![](DAY1/Images/lab2.png)    
+  ![](Images/lab2.png)    
 
 ## Lab 3 : Max and Min number representations. 
-  A C program is implemented to  show the maximum and minimum sizes for RV64I. The code can be found [here](https://github.com/iamrk-vlsi/RISC-V-MYTH-Workshop/tree/master/DAY1/unsignedHighest.c) 
+  A C program is implemented to  show the maximum and minimum sizes for RV64I. The code can be found [here](Codes/signed.c) 
   - Commands used are same as Lab 2
 
   **Output on console**
-  ![](DAY1/day1_lab2.png)
+  ![](Images/signed.png)
