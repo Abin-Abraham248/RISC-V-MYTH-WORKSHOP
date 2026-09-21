@@ -144,7 +144,7 @@ After completing the workshop, the major areas of practical learning include:
 
 ---
 
-
+<!--
 ## Workshop Certificate
 
 This repository serves as the technical documentation and evidence of work completed during the RISC-V MYTH Workshop.
@@ -152,14 +152,13 @@ This repository serves as the technical documentation and evidence of work compl
 **Certificate:** To be added after successful workshop completion.
 
 ---
-
+-->
 ## Acknowledgements
 
 I would like to thank **VLSI System Design (VSD)** and **Redwood EDA** for organizing the RISC-V MYTH Workshop and providing hands-on exposure to RISC-V processor design and open-source hardware development. Also thanking the mentors 
 
-[Kunal Ghosh] (https://github.com/kunalg123/), Co-founder, VSD Corp. Pvt. Ltd.
-[Steve Hoover] (https://github.com/stevehoover/), Founder, Redwood EDA
-
+* [Kunal Ghosh](https://github.com/stevehoover/), Co-founder, [VSD Corp. Pvt. Ltd](https://www.redwoodeda.com/).
+* [Steve Hoover](https://github.com/kunalg123/), Founder, [Redwood EDA](https://www.vlsisystemdesign.com/).
 ---
 
 
