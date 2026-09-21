@@ -1,5 +1,4 @@
 # RISC-V-MYTH-WORKSHOP
-# RISC-V MYTH Workshop
 
 ## Microprocessor for You in Thirty Hours
 
