@@ -7,7 +7,7 @@ The workshop provided hands-on exposure to the **RISC-V Instruction Set Architec
 
 ---
 
-# 🎯 Workshop Objectives
+## Workshop Objectives
 
 The main objectives of this workshop were to:
 
@@ -24,9 +24,50 @@ The main objectives of this workshop were to:
 * Gain practical experience with open-source hardware design tools.
 
 ---
+## Introduction to RISC-V ISA
+
+An Instruction Set Architecture (ISA) defines, describes, and specifies how a particular computer processor core works. The ISA describes the registers and describes each machine-level instruction. The ISA forms the interface between hardware and software. Hardware engineers design digital circuits to implement a given ISA specification. Software engineers write code (operating systems, compilers, etc.) based on a given ISA specification.A RISC-V ISA is defined as a base integer ISA, which must be present in any implementation, plus optional extensions to the base ISA. Each base integer instruction set is characterized by
+
+* Width of the integer registers (XLEN)
+* Corresponding size of the address space
+* Number of integer registers (32 in RISC-V)
+* More details on RISC-V ISA can be obtained here.
+
+## About GNU Compiler Tool Chain
+The GNU Toolchain is a popular set of programming tools commonly used in Linux systems. The toolchain contains GNU Make, GCC, GNU Binutils, GNU Bison, GNU m4, GNU Debugger, and the GNU build system. Each of these tools help programmers make and compile their code to produce a program or library.
+
+Under the risc-v toolchain,
+
+* To use the risc-v gcc compiler use the below command:
+```
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <object filename> <C filename>
+```
+* More generic command with different options:
+```
+riscv64-unknown-elf-gcc <compiler option -O1 ; Ofast> <ABI specifier -lp64; -lp32; -ilp32> <architecture specifier -RV64 ; RV32> -o <object filename> <C      filename>
+```
+* More details on compiler options can be obtained here
+
+* To view assembly code use the below command,
+```
+riscv64-unknown-elf-objdump -d <object filename>
+```
+To use SPIKE simualtor to run risc-v obj file use the below command,
+```
+spike pk <object filename>
+```
+To use SPIKE as debugger
+```
+spike -d pk <object Filename> with degub command as until pc 0 <pc of your choice>
+```
 
 
-# 📚 Workshop Documentation
+## Introduction to ABI
+System programming involves designing and writing computer programs that allow the computer hardware to interface with the programmer and the user, leading to the effective execution of application software on the computer system. In order to achieve systems programming there needs to be an interface which communicates between software and hardware which is where the APPLICATION BINARY INTERFACE comes into play.
+
+Application Binary Interface is an interface that allows application programmers to access hardware resources. RISC-V specification has 32 registers whose width is defined by XLEN which can be 32/64 for RV32/RV64 respectively.The data can be loaded from memory to registers or directly sent, Application programmer can access each of these 32 registers through its ABI name seen below
+
+## Workshop Documentation
 
 The workshop documentation is divided according to the individual workshop days.
 
@@ -46,7 +87,7 @@ The workshop documentation is divided according to the individual workshop days.
 
 ---
 
-# 🔧 Tools & Technologies
+## Tools & Technologies
 
 The workshop makes use of a combination of software-development and hardware-design tools.
 
@@ -80,257 +121,9 @@ The workshop makes use of a combination of software-development and hardware-des
 
 ---
 
-# 🧠 Major Concepts Covered
 
-## 1. RISC-V Instruction Set Architecture
 
-The workshop introduces the RISC-V ISA and its modular approach to processor design.
-
-Topics include:
-
-* RISC vs CISC
-* RISC-V ISA
-* RV32I
-* General-purpose registers
-* Instruction formats
-* Immediate values
-* Instruction encoding
-* Arithmetic and logical instructions
-* Load/store instructions
-* Branch and jump instructions
-
----
-
-## 2. Software-Hardware Interaction
-
-One of the important aspects of the workshop is understanding how a high-level program eventually becomes instructions executed by the processor.
-
-```text
-C Program
-    │
-    ▼
-Compiler
-    │
-    ▼
-RISC-V Assembly
-    │
-    ▼
-Machine Code
-    │
-    ▼
-RISC-V Processor
-```
-
-The RISC-V toolchain is used to compile and inspect programs at different stages of this process.
-
----
-
-## 3. RISC-V ABI
-
-The Application Binary Interface defines conventions used between software and the processor.
-
-The workshop covers:
-
-* RISC-V register conventions
-* Register names
-* Function calls
-* Return addresses
-* Stack usage
-* Argument and return-value registers
-
----
-
-## 4. TL-Verilog
-
-TL-Verilog is used to describe the processor design at a higher level of abstraction while explicitly expressing timing and pipeline stages.
-
-The workshop introduces concepts including:
-
-* Signals
-* Combinational logic
-* Sequential logic
-* Pipelines
-* Timing abstraction
-* Pipeline stages
-* Validity
-
----
-
-## 5. Processor Architecture
-
-The processor development work covers the major components required for instruction execution.
-
-```text
-             ┌─────────────────┐
-             │ Program Counter │
-             └────────┬────────┘
-                      │
-                      ▼
-             ┌─────────────────┐
-             │ Instruction     │
-             │ Fetch           │
-             └────────┬────────┘
-                      │
-                      ▼
-             ┌─────────────────┐
-             │ Instruction     │
-             │ Decode          │
-             └────────┬────────┘
-                      │
-              ┌───────┴────────┐
-              │                │
-              ▼                ▼
-       ┌─────────────┐   ┌─────────────┐
-       │ Register    │   │ Immediate   │
-       │ File        │   │ Generator   │
-       └──────┬──────┘   └──────┬──────┘
-              │                 │
-              └────────┬────────┘
-                       ▼
-                ┌─────────────┐
-                │     ALU     │
-                └──────┬──────┘
-                       │
-                       ▼
-                   Result
-```
-
----
-
-# 🚀 Processor Development
-
-The processor implementation progresses through multiple stages during the workshop.
-
-### Stage 1 — Basic Logic
-
-Fundamental digital logic and sequential circuits are explored.
-
-### Stage 2 — Instruction Execution
-
-The processor datapath required to execute RISC-V instructions is developed.
-
-### Stage 3 — RV32I Core
-
-The major components of the RISC-V processor are integrated.
-
-### Stage 4 — Pipelining
-
-The processor is organized into pipeline stages using TL-Verilog timing abstraction.
-
-### Stage 5 — Verification
-
-Simulation and waveform analysis are used to verify processor behavior.
-
----
-
-# 🧪 Verification & Simulation
-
-The processor is tested using RISC-V programs and simulation.
-
-The general verification flow is:
-
-```text
-       C Program
-           │
-           ▼
-    RISC-V Compiler
-           │
-           ▼
-    Assembly / Binary
-           │
-      ┌────┴─────┐
-      │          │
-      ▼          ▼
-    Spike      RISC-V
-  Simulator      Core
-      │          │
-      │          ▼
-      │       Simulation
-      │          │
-      └────┬─────┘
-           ▼
-     Result Analysis
-```
-
-Simulation screenshots, waveforms, generated code, and relevant outputs are documented under the respective workshop day.
-
----
-
-# 📁 Documentation Method
-
-Each workshop day contains its own documentation.
-
-Every day's directory is organized into:
-
-```text
-Day-X/
-│
-├── README.md
-├── images/
-├── code/
-└── outputs/
-```
-
-### `README.md`
-
-Contains:
-
-* Topics covered
-* Concepts learned
-* Tasks performed
-* Commands used
-* Implementation details
-* Results
-* Key observations
-* Learning outcomes
-
-### `images/`
-
-Contains relevant:
-
-* Screenshots
-* Architecture diagrams
-* Makerchip views
-* Waveforms
-* Simulation results
-
-### `code/`
-
-Contains source files and code developed during the corresponding day.
-
-### `outputs/`
-
-Contains generated outputs and results where applicable.
-
----
-
-# 📊 Learning Progression
-
-The workshop provides a progression from software understanding to hardware implementation:
-
-```text
-Understanding RISC-V
-        ↓
-Understanding Instructions
-        ↓
-Understanding Software Execution
-        ↓
-Understanding Machine Code
-        ↓
-Understanding Processor Datapath
-        ↓
-Learning TL-Verilog
-        ↓
-Building the RISC-V Core
-        ↓
-Adding Pipeline Stages
-        ↓
-Simulation & Verification
-```
-
----
-
-# 💡 Key Learning Outcomes
+## Key Learning Outcomes
 
 After completing the workshop, the major areas of practical learning include:
 
@@ -351,27 +144,8 @@ After completing the workshop, the major areas of practical learning include:
 
 ---
 
-# 🔭 Future Work
 
-The work developed during the workshop provides a foundation for further exploration of RISC-V processor design.
-
-Possible extensions include:
-
-* Expanding RV32I instruction support
-* Implementing additional pipeline stages
-* Hazard detection
-* Data forwarding
-* Branch handling
-* Memory interfaces
-* FPGA implementation
-* RTL synthesis
-* Physical design using open-source EDA tools
-* RISC-V ISA extensions
-* Custom instructions for hardware acceleration
-
----
-
-# 📜 Workshop Certificate
+## Workshop Certificate
 
 This repository serves as the technical documentation and evidence of work completed during the RISC-V MYTH Workshop.
 
@@ -379,29 +153,14 @@ This repository serves as the technical documentation and evidence of work compl
 
 ---
 
-# 🙏 Acknowledgements
+## Acknowledgements
 
-I would like to thank **VLSI System Design (VSD)** and **Redwood EDA** for organizing the RISC-V MYTH Workshop and providing hands-on exposure to RISC-V processor design and open-source hardware development.
+I would like to thank **VLSI System Design (VSD)** and **Redwood EDA** for organizing the RISC-V MYTH Workshop and providing hands-on exposure to RISC-V processor design and open-source hardware development. Also thanking the mentors 
 
-I also acknowledge the RISC-V open-source community and the developers of the tools used throughout this workshop.
-
----
-
-## 🔗 Useful Resources
-
-* [RISC-V International](https://riscv.org/)
-* [VLSI System Design](https://www.vlsisystemdesign.com/)
-* [Makerchip](https://makerchip.com/)
-* [RISC-V GNU Toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain)
-* [Spike RISC-V ISA Simulator](https://github.com/riscv-software-src/riscv-isa-sim)
+[Kunal Ghosh] (https://github.com/kunalg123/), Co-founder, VSD Corp. Pvt. Ltd.
+[Steve Hoover] (https://github.com/stevehoover/), Founder, Redwood EDA
 
 ---
 
-## 👨‍💻 Author
 
-**Abin Abraham**
 
-Electronics & Computer Engineering
-Saintgits College of Engineering
-
-[GitHub](https://github.com/Abin-Abraham248) · [LinkedIn](https://linkedin.com/in/abin-abraham248)
