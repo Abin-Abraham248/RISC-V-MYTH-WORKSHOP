@@ -73,11 +73,11 @@ The workshop documentation is divided according to the individual workshop days.
 
 |    Day    | Topic                                       | Documentation     |
 | :-------: | ------------------------------------------- | ----------------- |
-| **Day 1** | Introduction to RISC-V & Software Toolchain | [Day 1](./Day-1/) |
-| **Day 2** | RISC-V ISA, ABI & Basic Architecture        | [Day 2](./Day-2/) |
-| **Day 3** | TL-Verilog & Basic Processor Design         | [Day 3](./Day-3/) |
-| **Day 4** | RISC-V Core Implementation                  | [Day 4](./Day-4/) |
-| **Day 5** | Pipelining, Verification & Final Core       | [Day 5](./Day-5/) |
+| **Day 1** | Introduction to RISC-V & Software Toolchain | [Day 1](./DAY%201/) |
+| **Day 2** | RISC-V ISA, ABI & Basic Architecture        | [Day 2](./DAY%202/) |
+| **Day 3** | TL-Verilog & Basic Processor Design         | [Day 3](./DAY%203/) |
+| **Day 4** | RISC-V Core Implementation                  | [Day 4](./DAY%204/) |
+| **Day 5** | Pipelining, Verification & Final Core       | [Day 5](./DAY%205/) |
 
 > The exact contents of each day are documented in the corresponding `README.md`.
 
