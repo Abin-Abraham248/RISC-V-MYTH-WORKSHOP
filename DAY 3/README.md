@@ -13,4 +13,19 @@ Advantages :
 ## Lab 1 : Combinational logic
 Signals in TL-Verilog do not need declarations and can directly be used in assignments statements.All the signals start with '$' in TL-Verilog. If a signal is used but never assigned, the ide takes care of assigning random values to those signals. This example describes a combinational logic calculator designed using TL-verilog.
 
-![](image/comp_calc.png)
+![](image/comb_calc.png)
+
+## Lab 2 : Sequential logic
+Signals can be preceded with a '>>n' which will provide the value of that signal n cycles before .For example, >>1$num and >>2$num: the previous two values of $num. The use of >>1$num and >>2$num implies staging of $num through two flip-flops. This example describes a two cycle sequential logic calculator designed using TL-verilog.[code](code/seq_cal.tlv)
+
+![](image/seq_calc.png)
+
+## Lab 3 : Pipelined logic
+Timing abstract powerful feature of TL-Verilog which converts a code into pipeline stages easily. Whole code under |pipe scope with stages defined as @?. This example describes a pipelined calculator designed using TL-verilog.
+
+![](image/2_cycle_cal.png)
+
+## Lab 4 : Validity
+Validity is TL-verilog means signal indicates validity of transaction and described as "when" scope else it will work as don't care. Denoted as ?$valid. Validity provides easier debug, cleaner design, better error checking, automated clock gating.[code](code/2_cycle_clac_validity.tlv)
+
+![](image/2_cycle_valid_calc.png)
