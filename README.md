@@ -135,6 +135,8 @@ This repository serves as the technical documentation and evidence of work compl
 
 ---
 -->
+---
+
 ## Acknowledgements
 
 I would like to thank **VLSI System Design (VSD)** and **Redwood EDA** for organizing the RISC-V MYTH Workshop and providing hands-on exposure to RISC-V processor design and open-source hardware development. Also thanking the mentors 
